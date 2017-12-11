@@ -1,5 +1,5 @@
 # project: cjb2acce5032j0146z85q95ss
-# version: 2
+# version: 3
 
 type User @model {
   id: ID! @isUnique
@@ -8,6 +8,8 @@ type User @model {
   name: String!
   links: [Link!]! @relation(name: "UsersLinks")
   votes: [Vote!]! @relation(name: "UsersVotes")
+  email: String @isUnique
+  password: String
 }
 
 type Link @model {
